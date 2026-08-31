@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Order Orio Sushi</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Orio Sushi logo" class="logo" />
+        <span class="brand-text">Orio Sushi</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="order.html" class="active">Order Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Order Now</h1>
+    <form id="orderForm" class="order-form">
+      <label>
+        Full name
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        Phone
+        <input type="tel" name="phone" required />
+      </label>
+
+      <label>
+        Address
+        <textarea name="address" rows="3" required></textarea>
+      </label>
+
+      <label>
+        Product
+        <select name="product" required>
+          <option value="classic">Classic Orio Sushi — ₱120</option>
+        </select>
+      </label>
+
+      <label>
+        Quantity
+        <input type="number" name="quantity" min="1" value="1" required />
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Place Order</button>
+        <button type="reset" class="btn ghost">Reset</button>
+      </div>
+
+      <div id="orderMessage" class="muted"></div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="yearOrder"></span> Orio Sushi</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearOrder').textContent = new Date().getFullYear();
+    document.getElementById('orderForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form));
+      // Simple client-side confirmation (replace with real backend integration)
+      document.getElementById('orderMessage').textContent = `Thanks ${data.name}! Your order for ${data.quantity} x ${data.product} has been received. We will contact you at ${data.email}.`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
