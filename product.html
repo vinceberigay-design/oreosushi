@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products Orio Sushi</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Orio Sushi logo" class="logo" />
+        <span class="brand-text">Orio Sushi</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="order.html">Order Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Our Products</h1>
+    <p class="muted">Choose your favorite flavor and order online.</p>
+
+    <section class="product-grid">
+      <!-- Product card template repeated -->
+      <article class="product-card">
+        <img src="images/product.png" alt="Classic Orio Sushi" />
+        <h4>Classic Orio Sushi</h4>
+        <p class="price">₱120 / box</p>
+        <p class="muted">8 rolls per box</p>
+        <div class="card-actions">
+          <button class="btn" data-product='{"id":"classic","name":"Classic Orio Sushi","price":120}'>Add to Cart</button>
+          <button class="btn ghost" onclick="openQuickView('classic')">Quick View</button>
+        </div>
+      </article>
+
+      <!-- Add more product cards as needed -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="yearProducts"></span> Orio Sushi</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearProducts').textContent = new Date().getFullYear();
+    function openQuickView(id){
+      alert('Quick view for ' + id + ' (placeholder)');
+    }
+  </script>
+</body>
+</html>
