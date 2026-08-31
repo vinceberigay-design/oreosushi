@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Orio Sushi</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Orio Sushi logo" class="logo" />
+        <span class="brand-text">Orio Sushi</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="products.html">Products</a>
+        <a href="order.html">Order Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about">
+      <h1>About Orio Sushi</h1>
+      <p>Orio Sushi started as a playful dessert idea and quickly became a crowd favorite. We combine the familiar taste of Oreo cookies with a sushi-inspired presentation to create a fun, shareable treat.</p>
+      <h3>Our Promise</h3>
+      <ul>
+        <li>Freshly prepared</li>
+        <li>High quality ingredients</li>
+        <li>Small batch production</li>
+      </ul>
+      <img src="images/product.png" alt="Orio Sushi product" class="about-image" />
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="yearAbout"></span> Orio Sushi</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearAbout').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
