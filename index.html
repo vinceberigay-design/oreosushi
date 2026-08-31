@@ -1,0 +1,94 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="Orio Sushi logo" class="logo" />
+      <span class="brand-text">Orio Sushi</span>
+    </a>
+
+    <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle menu">
+      <span class="hamburger"></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="order.html">Order Now</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button id="cartBtn" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+  </div>
+</header>
+
+<main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Orio Sushi Rolls</h1>
+          <p class="lead">A sweet twist you’ll love — handcrafted dessert rolls made with Oreo cookies and cream.</p>
+          <a class="btn primary" href="products.html">Shop Now</a>
+        </div>
+        <div class="hero-image">
+          <img src="images/product.png" alt="Orio Sushi product" />
+        </div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <div class="feature">
+        <h3>2 Ingredients</h3>
+        <p>Simple, delicious, and perfect for parties.</p>
+      </div>
+      <div class="feature">
+        <h3>Handmade</h3>
+        <p>Small batches, fresh daily.</p>
+      </div>
+      <div class="feature">
+        <h3>Gift Ready</h3>
+        <p>Beautiful packaging for gifting or events.</p>
+      </div>
+    </section>
+
+    <section class="featured-products container">
+      <h2>Featured</h2>
+      <div class="product-grid">
+        <article class="product-card">
+          <img src="images/product.png" alt="Orio Sushi roll" />
+          <h4>Classic Orio Sushi</h4>
+          <p class="price">₱120 / box</p>
+          <p class="muted">8 rolls per box</p>
+          <div class="card-actions">
+            <button class="btn" data-product='{"id":"classic","name":"Classic Orio Sushi","price":120}'>Add to Cart</button>
+            <a class="btn ghost" href="products.html">View</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Orio Sushi</div>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cartModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" id="closeCart">×</button>
+      <h3>Your Cart</h3>
+      <div id="cartItems"></div>
+      <div class="cart-footer">
+        <strong>Total: ₱<span id="cartTotal">0</span></strong>
+        <a class="btn primary" href="order.html">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
