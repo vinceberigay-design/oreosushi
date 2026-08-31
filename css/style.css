@@ -1,0 +1,67 @@
+:root{
+  --primary:#0b66c3; /* Oreo blue inspired */
+  --dark:#222;
+  --muted:#666;
+  --bg:#fff;
+  --radius:8px;
+  --container:1100px;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{margin:0;color:var(--dark);background:#fafafa;line-height:1.5}
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+
+.site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--dark)}
+.logo{height:44px;width:44px;object-fit:contain;margin-right:0.5rem}
+.brand-text{font-weight:700;font-size:1.1rem}
+.main-nav a{margin:0 0.5rem;color:var(--muted);text-decoration:none;padding:0.25rem 0.5rem;border-radius:4px}
+.main-nav a.active, .main-nav a:hover{color:var(--primary);background:rgba(11,102,195,0.06)}
+
+.cart-btn{background:none;border:1px solid #ddd;padding:0.4rem 0.6rem;border-radius:6px;cursor:pointer}
+
+.hero{background:linear-gradient(180deg,#fff 0%, #fbfbff 100%);padding:2.5rem 0}
+.hero-inner{display:flex;gap:2rem;align-items:center}
+.hero-text{flex:1}
+.hero-text h1{font-size:2rem;margin:0 0 0.5rem}
+.lead{color:var(--muted);margin-bottom:1rem}
+.hero-image img{max-width:360px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+
+.features{display:flex;gap:1rem;justify-content:space-between;padding:1.5rem 0}
+.feature{flex:1;background:#fff;padding:1rem;border-radius:10px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
+
+.feature h3{margin:0 0 0.5rem}
+.muted{color:var(--muted)}
+
+.featured-products{padding:2rem 0}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.product-card{background:#fff;padding:1rem;border-radius:10px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.product-card img{max-width:160px;border-radius:8px}
+.price{font-weight:700;color:var(--primary);margin:0.5rem 0}
+
+.btn{display:inline-block;padding:0.5rem 0.8rem;border-radius:8px;border:1px solid #ddd;background:#fff;color:var(--dark);cursor:pointer;text-decoration:none}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn.ghost{background:transparent;border:1px solid #ddd}
+
+.card-actions{display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem}
+
+.site-footer{background:#fff;border-top:1px solid #eee;padding:1rem 0;margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center}
+.modal.hidden{display:none}
+.modal-content{background:#fff;padding:1rem;border-radius:10px;max-width:520px;width:100%;position:relative}
+.modal-close{position:absolute;right:8px;top:8px;border:none;background:transparent;font-size:1.4rem;cursor:pointer}
+
+.order-form label, .contact-form label{display:block;margin-bottom:0.75rem}
+.order-form input, .order-form textarea, .contact-form input, .contact-form textarea, .order-form select{width:100%;padding:0.6rem;border:1px solid #ddd;border-radius:8px}
+
+.form-actions{display:flex;gap:0.5rem;margin-top:0.5rem}
+
+@media (max-width:880px){
+  .hero-inner{flex-direction:column-reverse;text-align:center}
+  .main-nav{display:none}
+  .header-inner{gap:1rem}
+}
