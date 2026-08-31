@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Product — Orio Sushi</title>
+  <title>Products Orio Sushi</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -21,7 +21,7 @@
       <nav class="main-nav" id="mainNav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="products.html">Products</a>
+        <a href="products.html" class="active">Products</a>
         <a href="order.html">Order Now</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -31,36 +31,38 @@
   </header>
 
   <main class="container">
-    <div id="productWrap" class="product-detail">
-      <div class="product-media">
-        <img id="productImage" src="images/product.png" alt="Product image" />
-      </div>
-      <div class="product-info">
-        <h1 id="productName">Product Name</h1>
-        <p id="productShort" class="muted">Short description</p>
-        <p id="productPrice" class="price">₱0</p>
-        <p id="productDesc">Full description</p>
+    <h1>Our Products</h1>
+    <p class="muted">Choose your favorite flavor and order online.</p>
 
-        <label>
-          Quantity
-          <input id="productQty" type="number" min="1" value="1" />
-        </label>
-
+    <section class="product-grid">
+      <!-- Product card template repeated -->
+      <article class="product-card">
+        <a href="product.html?id=classic"><img src="images/product.png" alt="Classic Orio Sushi" /></a>
+        <h4>Classic Orio Sushi</h4>
+        <p class="price">₱120 / box</p>
+        <p class="muted">8 rolls per box</p>
         <div class="card-actions">
-          <button id="addToCartBtn" class="btn primary">Add to Cart</button>
-          <button id="buyNowBtn" class="btn">Buy Now</button>
+          <button class="btn" data-product='{"id":"classic","name":"Classic Orio Sushi","price":120}'>Add to Cart</button>
+          <button class="btn ghost" onclick="openQuickView('classic')">Quick View</button>
         </div>
-      </div>
-    </div>
+      </article>
+
+      <!-- Add more product cards as needed -->
+    </section>
   </main>
 
-  <footer class="site-footer"> 
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© <span id="yearProduct"></span> Orio Sushi</div>
+      <div>© <span id="yearProducts"></span> Orio Sushi</div>
     </div>
   </footer>
 
-  <script>document.getElementById('yearProduct').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('yearProducts').textContent = new Date().getFullYear();
+    function openQuickView(id){
+      alert('Quick view for ' + id + ' (placeholder)');
+    }
+  </script>
   <script src="js/script.js"></script>
 </body>
 </html>

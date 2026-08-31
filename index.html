@@ -1,27 +1,36 @@
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img src="images/logo.png" alt="Orio Sushi logo" class="logo" />
-      <span class="brand-text">Orio Sushi</span>
-    </a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Orio Sushi — Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Orio Sushi logo" class="logo" />
+        <span class="brand-text">Orio Sushi</span>
+      </a>
 
-    <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle menu">
-      <span class="hamburger"></span>
-    </button>
+      <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
 
-    <nav class="main-nav" id="mainNav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="order.html">Order Now</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="order.html">Order Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-    <button id="cartBtn" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
-  </div>
-</header>
+      <button id="cartBtn" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
 
-<main>
+  <main>
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
@@ -54,13 +63,13 @@
       <h2>Featured</h2>
       <div class="product-grid">
         <article class="product-card">
-          <img src="images/product.png" alt="Orio Sushi roll" />
+          <a href="product.html?id=classic"><img src="images/product.png" alt="Orio Sushi roll" /></a>
           <h4>Classic Orio Sushi</h4>
           <p class="price">₱120 / box</p>
           <p class="muted">8 rolls per box</p>
           <div class="card-actions">
             <button class="btn" data-product='{"id":"classic","name":"Classic Orio Sushi","price":120}'>Add to Cart</button>
-            <a class="btn ghost" href="products.html">View</a>
+            <a class="btn ghost" href="product.html?id=classic">View</a>
           </div>
         </article>
       </div>

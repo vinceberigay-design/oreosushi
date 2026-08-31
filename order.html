@@ -13,13 +13,20 @@
         <img src="images/logo.png" alt="Orio Sushi logo" class="logo" />
         <span class="brand-text">Orio Sushi</span>
       </a>
-      <nav class="main-nav">
+
+      <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="products.html">Products</a>
         <a href="order.html" class="active">Order Now</a>
         <a href="contact.html">Contact</a>
       </nav>
+
+      <button id="cartBtn" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
     </div>
   </header>
 
@@ -65,6 +72,15 @@
 
       <div id="orderMessage" class="muted"></div>
     </form>
+
+    <section class="quick-checkout container" style="margin-top:1.5rem;">
+      <h2>Quick Checkout</h2>
+      <div id="checkoutButtons">
+        <button id="stripeCheckout" class="btn primary">Pay with Stripe</button>
+        <button id="paypalCheckout" class="btn">Pay with PayPal</button>
+      </div>
+      <div id="checkoutMessage" class="muted" style="margin-top:0.5rem;"></div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -75,14 +91,18 @@
 
   <script>
     document.getElementById('yearOrder').textContent = new Date().getFullYear();
-    document.getElementById('orderForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const form = e.target;
-      const data = Object.fromEntries(new FormData(form));
-      // Simple client-side confirmation (replace with real backend integration)
-      document.getElementById('orderMessage').textContent = `Thanks ${data.name}! Your order for ${data.quantity} x ${data.product} has been received. We will contact you at ${data.email}.`;
-      form.reset();
+    document.getElementById('stripeCheckout')?.addEventListener('click', async () => {
+      const cart = JSON.parse(localStorage.getItem('oreo_cart_v1') || '[]');
+      if(cart.length === 0){ alert('Your cart is empty'); return; }
+      document.getElementById('checkoutMessage').textContent = 'Stripe checkout scaffold: call your server to create a session.';
+    });
+    document.getElementById('paypalCheckout')?.addEventListener('click', async () => {
+      const cart = JSON.parse(localStorage.getItem('oreo_cart_v1') || '[]');
+      if(cart.length === 0){ alert('Your cart is empty'); return; }
+      document.getElementById('checkoutMessage').textContent = 'PayPal checkout scaffold: call your server to create an order.';
     });
   </script>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

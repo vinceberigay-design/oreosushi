@@ -1,3 +1,4 @@
+/* combined css/style.css for Oreo Sushi starter site */
 :root{
   --primary:#0b66c3; /* Oreo blue inspired */
   --dark:#222;
@@ -64,4 +65,20 @@ body{margin:0;color:var(--dark);background:#fafafa;line-height:1.5}
   .hero-inner{flex-direction:column-reverse;text-align:center}
   .main-nav{display:none}
   .header-inner{gap:1rem}
+}
+
+/* Mobile toggle (from hn.txt) */
+.mobile-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:0.4rem;border-radius:6px}
+.hamburger{display:block;width:26px;height:2px;background:var(--dark);position:relative}
+.hamburger::before,.hamburger::after{content:"";position:absolute;left:0;width:26px;height:2px;background:var(--dark)}
+.hamburger::before{top:-8px}
+.hamburger::after{top:8px}
+
+/* Mobile nav */
+@media (max-width:880px){
+  .mobile-toggle{display:block}
+  .main-nav{position:fixed;top:64px;right:0;background:#fff;width:260px;height:calc(100% - 64px);box-shadow:-8px 0 24px rgba(0,0,0,0.08);transform:translateX(100%);transition:transform .28s ease;padding:1rem;display:flex;flex-direction:column;gap:0.5rem;z-index:60}
+  .main-nav.open{transform:translateX(0)}
+  .main-nav a{padding:0.75rem 1rem;border-radius:8px;color:var(--dark);display:block}
+  .header-inner{align-items:center}
 }
