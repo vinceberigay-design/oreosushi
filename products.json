@@ -1,0 +1,22 @@
+[
+  {
+    "id": "classic",
+    "name": "Classic Oreo Sushi",
+    "price": 120,
+    "currency": "PHP",
+    "short": "8 rolls per box",
+    "description": "Handcrafted Oreo cookie rolls with creamy filling. Perfect for parties.",
+    "image": "images/product.png",
+    "stock": 120
+  },
+  {
+    "id": "strawberry",
+    "name": "Strawberry Twist",
+    "price": 140,
+    "currency": "PHP",
+    "short": "8 rolls per box",
+    "description": "Creamy strawberry center with Oreo crumb wrap.",
+    "image": "images/product.png",
+    "stock": 60
+  }
+]
