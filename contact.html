@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Orio Sushi</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Orio Sushi logo" class="logo" />
+        <span class="brand-text">Orio Sushi</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="order.html">Order Now</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contact Us</h1>
+    <p class="muted">Questions, wholesale inquiries, or event orders — send us a message.</p>
+
+    <form id="contactForm" class="contact-form">
+      <label>
+        Name
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Send Message</button>
+      </div>
+      <div id="contactMessage" class="muted"></div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="yearContact"></span> Orio Sushi</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearContact').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      document.getElementById('contactMessage').textContent = `Thanks ${data.name}, we received your message and will reply to ${data.email} soon.`;
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
